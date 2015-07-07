@@ -2,6 +2,41 @@
 
 # DMVPN Configuration #
 
+Phase 1
+* mGRE on hub and p2p on spokes
+ + NHRP required for spoke registration to hub
+ + No spoke to spoke tunnels
+* Routing
+ + Summarization and default routing is allowed at hub
+ + Next-hop on spokes is always changed by hub
+
+Phase 2 (obsolete)
+* mGRE on hub and spokes
+ + NHRP required for spoke registration to hub
+ + NHRP required for spoke to spoke resolution
+ + Spoke to spoke tunnel triggered by spoke
+* Routing
+ + Summarization and default routing is __NOT__ allowed
+ + Next-hop on spokes is always preserved by hub
+ + Multi-level hierarchy requires hub daisy-chaining
+
+Phase 3
+ * mGRE on hub and spokes
+  + NHRP required for spoke registration to hub
+  + NHRP required for spoke to spoke resolution
+ * When hub receives and forwards packet out same interface
+  + Send NHRP redirect message back to packet source
+  + Forward original packet down to spoke via RIB
+ * Routing
+  + Summarization and default routing is allowd at hub
+   * Results in NHRP type routes for spoke to spoke tunnel
+   * Wit no-summary, Next Hop O? is performed for spoke to spoke
+    - Next-hop is changed from hub IP to spoke IP
+ * Next-Hop on spokes is always changed by hub
+  + This means NHRP resolution is triggered by hub
+ * Multi-level hierarchy works without daisy changing
+
+
 ### Minimal Configuration ###
 
 Note: Used [RFC5737](http://www.rfc-base.org/txt/rfc-5737.txt) and [RFC3849](http://www.rfc-base.org/txt/rfc-3849.txt) addresses in this document.

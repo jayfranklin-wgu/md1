@@ -9,6 +9,8 @@ Note: Used [RFC5737](http://www.rfc-base.org/txt/rfc-5737.txt) and [RFC3849](htt
 		TEST-NET-1 (192.0.2.0/24) as the DMVPN addresses.
 		TEST-NET-3 (203.0.113.0/24) as the public addresses.
 		TEST-NET-2 (198.51.100.0/24) is not used.
+		
+		2001:DB8::/32 is not used (currently)
 
 	I recommend everyone using these addresses, when possible. :)
 

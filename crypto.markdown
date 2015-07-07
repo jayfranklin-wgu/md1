@@ -11,9 +11,9 @@ How it works
 * Crypto maps is a data plane feature
 * Matching traffic causes ISAKMP to start
 * Traffic matched via ACL
-1a. define proxy ID's for IPSec Phase 2
-* Allows for granual control over VPN traffic
-1a. only send telnet over tunnel, etcetera.
+  + define proxy ID's for IPSec Phase 2
+* Allows for granual control over VPN traffic 
+  + only send telnet over tunnel, etcetera.
 
 Applying Crypto Maps
 * only one per interface

@@ -20,7 +20,7 @@ Hub:
 	interface Tunnel0
 		ip address 192.0.2.10 255.255.255.0
 		ip nhrp authentication secret
-		ip nhrp map multicast
+		ip nhrp map multicast dynamic
 		ip nhrp network-id 1
 		tunnel source Ethernet0/0
 		tunnel mode gre multipoint
@@ -36,14 +36,18 @@ Spoke:
 	interface Tunnel0
 		ip address 192.0.2.101 255.255.255.0
 		ip nhrp authentication secret
+		ip nhrp network-id 1
 		ip nhrp map nhs 192.0.2.10
 		ip nhrp map multicast 192.0.2.10 203.0.113.1
+		tunnel mode gre
+		tunnel destination 203.0.113.1
 		tunnel source Ethernet0/0
 		tunnel key 1
 	!
 	interface Ethernet0/0
 		ip address 203.0.113.101 255.255.255.0
 		no shutdown
+
 
 
 

@@ -21,7 +21,7 @@ Applying Crypto Maps
 * can apply one map to multiple interfaces
 * entries processed in top-down approach
 * tunnel source applies to interface address
-1a. changed using `crypto-map local-address` command
+  + changed using `crypto-map local-address` command
 
 Order of Operations
 * Encryption applies after routing (may need static routing)

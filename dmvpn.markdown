@@ -30,7 +30,7 @@ Phase 3
  * Routing
   + Summarization and default routing is allowd at hub
    * Results in NHRP type routes for spoke to spoke tunnel
-   * Wit no-summary, Next Hop O? is performed for spoke to spoke
+   * With no-summary, Next Hop O? is performed for spoke to spoke
     - Next-hop is changed from hub IP to spoke IP
  * Next-Hop on spokes is always changed by hub
   + This means NHRP resolution is triggered by hub
